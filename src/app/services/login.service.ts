@@ -11,7 +11,7 @@ export class LoginService {
 
   //Login App URL
 
-  private url = 'localhost:3000/api/users/login';//Aqui la url de login
+  private url = 'http://localhost:3000/api/users/login';//Aqui la url de login
   private idToken:string;
 
 

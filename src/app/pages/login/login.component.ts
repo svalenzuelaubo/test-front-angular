@@ -22,15 +22,11 @@ export class LoginComponent implements OnInit {
   }
 
   login(form : NgForm){
-
-    console.log(form);
     if(form.invalid) {return;}
-    console.log(this.user);
-
     this.loginService.login(this.user).subscribe( data =>{
         console.log(data);
         //Si la respuesta es correcta redirecciona al Home
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/products');
     }, (err)=>{
         console.log(err);
     });

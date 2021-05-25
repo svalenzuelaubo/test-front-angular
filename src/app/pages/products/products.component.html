@@ -1,0 +1,31 @@
+<h1>Productos</h1>
+<hr>
+
+<div class="card animated fadeIn fast table">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">SKU</th>
+                <th scope="col">Peso</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products; let i = index">
+                <td>{{ product.title }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.sku }}</td>
+                <td>{{ product.grams }}</td>
+                <td>{{ product.price }}</td>
+                <td><button (click)='editProduct(product.handle);' class="btn btn-outline-primary btn-block">Editar</button></td>
+                <td><button (click)='deleteProduct(product.handle);' class="btn btn-outline-primary btn-block">Eliminar...</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
