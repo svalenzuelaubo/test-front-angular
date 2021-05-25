@@ -15,14 +15,14 @@ export class ProductComponent implements OnInit {
     private activatedRoute:ActivatedRoute,
     private _productsService:ProductsService,
     private router:Router) { 
-    this.activatedRoute.params.subscribe(params => {
-      this._productsService.getProduct(params['handle']).subscribe( data =>{
-        this.product=data;
-      }, (err)=>{
-          console.log(err);
+      this.activatedRoute.params.subscribe(params => {
+        this._productsService.getProduct(params['handle']).subscribe( data =>{
+          this.product=data;
+        }, (err)=>{
+            console.log(err);
+        });
       });
-    });
-  }
+    }
 
   ngOnInit(): void {
     
@@ -30,8 +30,14 @@ export class ProductComponent implements OnInit {
 
   updateProduct(form : NgForm){
     if(form.invalid) {return;}
-    this._productsService.updateProduct(this.product).subscribe( data =>{
-        
+
+    this._productsService.getProducts().subscribe( data =>{
+      this._productsService.updateProduct(this.product);
+      alert('producto actualizado');
+      let currentUrl = this.router.url;
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+          this.router.navigate([currentUrl]);
+      });
     }, (err)=>{
         console.log(err);
     });

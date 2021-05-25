@@ -25,11 +25,23 @@ export class ProductsComponent implements OnInit {
   }
 
   deleteProduct(handle:string){
-    this._productsService.deleteProduct(handle);
+    this._productsService.getProducts().subscribe( data =>{
+      this._productsService.deleteProduct(handle);
+      alert('producto eliminado');
+      let currentUrl = this.router.url;
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+          this.router.navigate([currentUrl]);
+      });
+    }, (err)=>{
+        console.log(err);
+    });
   }
 
   editProduct(handle:string){
     this.router.navigate(['/product',handle]);
+  }
+  createProduct(){
+    this.router.navigate(['/new-product']);
   }
 
 }

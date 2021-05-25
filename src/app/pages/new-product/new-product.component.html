@@ -1,66 +1,66 @@
 <div class="card">
     <div class="card-header">
-        Editar Producto {{product.title}}
+        crear Producto
     </div>
     <div class="card-body">
-        <form (ngSubmit)="updateProduct(f.value)" #f="ngForm">
+        <form (ngSubmit)="createProduct(f.value)" #f="ngForm">
             <div class="form-group row">
                 <label for="title" class="col-sm-2 col-form-label">Codigo</label>
                 <div class="col-sm-10">
-                    <input [(ngModel)]="product.handle" disabled type="text" class="form-control" id="handle" name="handle" placeholder="{{product.handle}}">
+                    <input [(ngModel)]="product.handle" type="text" class="form-control" id="handle" name="handle">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="title" class="col-sm-2 col-form-label">Nombre</label>
                 <div class="col-sm-10">
-                    <input [(ngModel)]="product.title" type="text" class="form-control" id="title" name="title" placeholder="{{product.title}}">
+                    <input [(ngModel)]="product.title" type="text" class="form-control" id="title" name="title">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="description" class="col-sm-2 col-form-label">Descripcion</label>
                 <div class="col-sm-10">
-                    <textarea [(ngModel)]="product.description" id="description" name="description" class="md-textarea form-control" rows="3" placeholder='{{product.description}}'></textarea>
+                    <textarea [(ngModel)]="product.description" id="description" name="description" class="md-textarea form-control" rows="3"></textarea>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="sku" class="col-sm-2 col-form-label">SKU</label>
                 <div class="col-sm-10">
-                    <input [(ngModel)]="product.sku" type="text" class="form-control" id="sku" name="sku" placeholder="{{product.sku}}">
+                    <input [(ngModel)]="product.sku" type="text" class="form-control" id="sku" name="sku">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="grams" class="col-sm-2 col-form-label">Peso</label>
                 <div class="col-sm-10">
-                    <input [(ngModel)]="product.grams" type="text" class="form-control" id="grams" name="grams" placeholder="{{product.grams}}">
+                    <input [(ngModel)]="product.grams" type="text" class="form-control" id="grams" name="grams">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="sku" class="col-sm-2 col-form-label">Stock</label>
                 <div class="col-sm-10">
-                    <input [(ngModel)]="product.stock" type="text" class="form-control" id="stock" name="stock" placeholder="{{product.stock}}">
+                    <input [(ngModel)]="product.stock" type="text" class="form-control" id="stock" name="stock">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="price" class="col-sm-2 col-form-label">Precio</label>
                 <div class="col-sm-10">
-                    <input [(ngModel)]="product.price" type="text" class="form-control" id="price" name="price" placeholder="{{product.price}}">
+                    <input [(ngModel)]="product.price" type="text" class="form-control" id="price" name="price">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="comparePrice" class="col-sm-2 col-form-label">Precio Comparado</label>
                 <div class="col-sm-10">
-                    <input [(ngModel)]="product.comparePrice" type="text" class="form-control" id="comparePrice" name="comparePrice" placeholder="{{product.comparePrice}}">
+                    <input [(ngModel)]="product.comparePrice" type="text" class="form-control" id="comparePrice" name="comparePrice">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="Codigo de Barras" class="col-sm-2 col-form-label">Codigo de Barras</label>
                 <div class="col-sm-10">
-                    <input [(ngModel)]="product.barcode" type="text" class="form-control" id="barcode" name="barcode" placeholder="{{product.barcode}}">
+                    <input [(ngModel)]="product.barcode" type="text" class="form-control" id="barcode" name="barcode">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Editar</button>
+                    <button type="submit" class="btn btn-primary">Crear</button>
                 </div>
             </div>
         </form>

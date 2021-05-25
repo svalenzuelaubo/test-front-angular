@@ -29,20 +29,26 @@ export class ProductsService {
   }
 
   deleteProduct(handle: string): any{
-    console.log('borrando handle '+handle);
-    return this.http.delete(`${this.url}/`+handle).pipe(
-        map(resp =>{
-          return resp;
-        })
-      )
+    return this.http.delete(`${this.url}/`+handle)
+        .subscribe({
+            next: data => {
+              return 'producto eliminado';
+            },
+            error: error => {
+              return 'error al eliminar producto';
+            }
+      });
   }
 
-  updateProduct(product:Product){
-    return this.http.post(`${this.url}`,product).pipe(
-      map(resp =>{
-        return resp;
-      })
-    )
+  updateProduct(product:Product) :any{
+    return this.http.post(`${this.url}`,product).subscribe({
+      next: data => {
+        return 'producto actualizado';
+      },
+      error: error => {
+        return 'error al actualizar producto.';
+      }
+});
   }
 
 }

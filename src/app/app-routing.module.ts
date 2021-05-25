@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LoginGuard } from './guards/login.guard';
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductComponent } from './pages/product/product.component';
+import { NewProductComponent } from './pages/new-product/new-product.component';
 
 const routes: Routes = [
   //{ path: 'home'    , component: HomeComponent, canActivate:[ LoginGuard ] },
@@ -13,6 +14,7 @@ const routes: Routes = [
   //{ path: '**', redirectTo: 'login' },
   { path: 'products', component: ProductsComponent },
   { path: 'product/:handle', component: ProductComponent },
+  { path: 'new-product', component: NewProductComponent },
 ];
 
 @NgModule({
