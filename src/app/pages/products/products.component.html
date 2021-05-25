@@ -1,4 +1,4 @@
-<h1>Productos</h1><button (click)='createProduct();' class="btn btn-outline-primary btn-block">Nuevo Producto</button>
+<h1>Productos</h1><button (click)='createProduct();' class="btn btn-success">Nuevo Producto</button>
 <hr>
 <div class="card animated fadeIn fast table">
     <table>
@@ -21,7 +21,7 @@
                 <td>{{ product.grams }}</td>
                 <td>{{ product.price }}</td>
                 <td><button (click)='editProduct(product.handle);' class="btn btn-outline-primary btn-block">Editar</button></td>
-                <td><button (click)='deleteProduct(product.handle);' class="btn btn-outline-primary btn-block">Eliminar...</button></td>
+                <td><button (click)='deleteProduct(product.handle);' class="btn btn-danger">Eliminar...</button></td>
             </tr>
         </tbody>
 

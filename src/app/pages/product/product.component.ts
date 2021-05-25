@@ -42,5 +42,7 @@ export class ProductComponent implements OnInit {
         console.log(err);
     });
   }
-
+  listProducts(){
+    this.router.navigate(['/products']);
+  }
 }
